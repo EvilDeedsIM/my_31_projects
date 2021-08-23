@@ -1,0 +1,52 @@
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: linear-gradient(#f1f1f1, lightcoral);
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  border: 1px solid #000;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+}
+
+.quote {
+  user-select: none;
+  font-weight: 700;
+  font-size: 1.3rem;
+}
+
+span {
+  user-select: none;
+}
+
+.quote,
+span:first-of-type {
+  margin-bottom: 0.5rem;
+}
+
+small {
+  margin-top: 1rem;
+  font-size: 0.7rem;
+  user-select: none;
+}
