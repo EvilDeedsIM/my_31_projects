@@ -16,18 +16,18 @@ const arrOfTasks = [
 ];
 
 (function (tasks) {
+  // << Print saved tasks on load
   const objOfTasks = tasks.reduce((acc, task) => {
     acc[task._id] = task;
     return acc;
   }, {});
+  // Print saved tasks on load >>
 
-  // Event Listeners
-  addBtn.addEventListener("click", createNewTask);
-
-  // <- Create and print tasks
-  function taksTemplate({ _id, title }) {
+  // << Create and print tasks
+  function taskTemplate({ _id, title }) {
     const li = document.createElement("li");
     li.classList.add("task-item");
+    li.setAttribute("data-task-id", _id);
 
     const h2 = document.createElement("h2");
     h2.classList.add("task-title");
@@ -46,23 +46,27 @@ const arrOfTasks = [
   const fragment = document.createDocumentFragment();
 
   Object.values(objOfTasks).forEach((task) => {
-    const li = taksTemplate(task);
+    const li = taskTemplate(task);
     fragment.appendChild(li);
   });
 
   const list = document.querySelector(".task-list");
   list.appendChild(fragment);
-  // Create and print tasks ->
+  // Create and print tasks >>
 
-  console.log(form);
+  // << New Task
+  addBtn.addEventListener("click", (e) => {
+    e.preventDefault();
+    printNewTask();
+  });
+
   function getInputValue() {
     const input = form.elements["input"];
     if (!input.value) return alert("Input task");
     return input.value;
   }
 
-  function createNewTask(e) {
-    e.preventDefault();
+  function createNewTask() {
     const value = getInputValue();
     if (!value) return;
     const newTask = {
@@ -72,6 +76,23 @@ const arrOfTasks = [
 
     objOfTasks[newTask._id] = newTask;
 
-    console.log(objOfTasks);
+    return newTask;
   }
+
+  function printNewTask() {
+    const task = createNewTask();
+    const taskElement = taskTemplate(task);
+    list.insertAdjacentElement("afterbegin", taskElement);
+    form.reset();
+  }
+  // New Task >>
+
+  // << Delete task
+  list.addEventListener("click", deleteTask);
+  function deleteTask({ target }) {
+    if (target.tagName !== "BUTTON") return;
+    delete objOfTasks[target.parentElement.dataset.taskId];
+    target.parentElement.remove();
+  }
+  // Delete task >>
 })(arrOfTasks);
