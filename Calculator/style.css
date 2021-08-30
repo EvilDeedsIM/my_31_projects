@@ -1,0 +1,42 @@
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+body {
+  background: linear-gradient(#444, #222);
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.input {
+  border: none;
+  height: 2rem;
+  margin-bottom: 0.2rem;
+  text-align: right;
+  padding: 0 0.5rem;
+  font-size: 1.2rem;
+  line-height: 1.2rem;
+}
+
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.2rem;
+}
+
+.btn {
+  height: 3rem;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
