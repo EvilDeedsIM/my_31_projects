@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tip Calculator</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>Tip Calculator</h1>
+    <div class="input-bill">
+      <span>Bill $</span>
+      <input type="number" name="bill" id="bill-input" class="bill-input" />
+    </div>
+    <div class="input-tip">
+      <input
+        type="range"
+        name="tip"
+        id="tip-input"
+        class="tip-input"
+        min="0"
+        max="100"
+        step="1"
+        value="0"
+      />
+      <span class="tip-text">0%</span>
+    </div>
+
+    <div class="output">
+      <span>Tip:</span>
+      <span class="tip-output">0</span>
+      <span>Total Bill:</span>
+      <span class="total-bill-output">0</span>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
