@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rock Paper Scissor</title>
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://pro.fontawesome.com/releases/v5.15.4/css/all.css"
+    />
+  </head>
+  <body>
+    <h1>Rock Paper Scissor</h1>
+
+    <div class="board">
+      <div class="score">
+        <span class="score__you">0</span>
+        <span class="score__bot">0</span>
+      </div>
+      <div class="players">
+        <span class="player__you">You</span>
+        <span class="player__bot">Computer</span>
+      </div>
+      <div class="choice">
+        <span class="choice__you">r</span>
+        <span class="choice__bot">s</span>
+      </div>
+    </div>
+
+    <div class="buttons">
+      <button id="rock" class="btn rock">
+        <i class="far fa-hand-rock"></i>
+      </button>
+      <button id="paper" class="btn paper">
+        <i class="far fa-hand-paper"></i>
+      </button>
+      <button id="scissors" class="btn scissors">
+        <i class="far fa-hand-scissors"></i>
+      </button>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>

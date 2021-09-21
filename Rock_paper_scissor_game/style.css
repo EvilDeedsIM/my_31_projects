@@ -1,0 +1,107 @@
+html {
+  box-sizing: border-box;
+  font-size: 10px;
+  font-family: sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+  color: #fff;
+}
+
+body {
+  background: linear-gradient(#4286f4, #373b44);
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding-top: 1rem;
+}
+
+h1 {
+  text-shadow: -1px -1px 3px #444, 1px -1px 3px #444;
+  margin-bottom: 3rem;
+  font-size: 3rem;
+}
+
+i {
+  pointer-events: none;
+}
+
+.board {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 3rem;
+  border: 2px solid #fff;
+  border-radius: 10px;
+  width: 300px;
+  height: 150px;
+}
+
+.board div {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 3rem;
+}
+
+.score span {
+  font-size: 2.5rem;
+  font-weight: 700;
+  /* color: orange; */
+  text-shadow: 0 0 1px #222;
+}
+.score span:first-child {
+  text-align: right;
+}
+
+.players span {
+  font-size: 2rem;
+}
+.players span:first-child {
+  text-align: right;
+}
+
+.choice span {
+  font-size: 4rem;
+}
+.choice span:first-child {
+  text-align: right;
+}
+
+.buttons {
+  display: flex;
+  gap: 1rem;
+}
+
+.btn {
+  width: 7rem;
+  height: 5rem;
+  font-size: 3rem;
+  border: 3px solid #fff;
+  border-radius: 10px;
+  background: none;
+  box-shadow: 0 0 2px #222;
+  cursor: pointer;
+  transition: 0.05s;
+}
+
+.btn:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.btn:active {
+  font-size: 2.5rem;
+}
+
+.rock i,
+.paper i {
+  transform: rotateZ(-90deg) rotateY(180deg);
+}
